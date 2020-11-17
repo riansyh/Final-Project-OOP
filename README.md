@@ -16,7 +16,7 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 
 ## Change log
 
-- **[Sprint Planning](changelog/sprint-planning.md) - (planning date)**
+- **[Sprint Planning](changelog/sprint-planning.md) - (17/11/2020)**
 
   - Berdiskusi, mencari referensi, menentukan product backlog dan sprint backlog
 
