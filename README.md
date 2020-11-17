@@ -4,7 +4,7 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 
 [Challenge Guidelines](challenge-guideline.md)
 
-**Please create a description for this project here**
+**Fifteen Puzzle** adalah game teka-teki yang teknis permainannnya di geser. Game ini terdiri atas 1 bingkai berukuran n x n dimana didalamnya terdiri dari kotak yang jumlahnya n x n dan didalamnya terdapat nomor acak, dimana pemain harus memecahkan teka-teki tersebut dengan cara menggeser si kotak kosong terhadap kotak yang berisi nomor acak supaya menjadi berurutan.
 
 ## Credits
 | NPM           | Name                         |
