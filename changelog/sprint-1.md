@@ -1,6 +1,6 @@
 # Scrum Report (Sprint 1)
 
-| From dd/mm/yyyy to dd/mm/yyyy
+| From 16/11/2020 to 22/11/2020
 
 ### Team VDJCSIN
 
