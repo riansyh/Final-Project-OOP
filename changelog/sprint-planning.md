@@ -22,6 +22,7 @@
 | 2.2 | Membuat listener untuk mouse                                  | John Doe |
 | 2.3 | Membuat method shuffle dan solvable                           | John Doe |
 | 2.4 | Membuat method new game                                       | John Doe |
+| 2.5 | Membuat button                                                | John Doe |
 | 3.1 | Membuat method reset                                          | John Doe |
 | 3.2 | Membuat animasi ketika ubin di klik                           | John Doe |
 | 3.3 | Finishing                                                     | John Doe |
