@@ -9,7 +9,7 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 ## Credits
 | NPM           | Name                         |
 | ------------- |---------------------------   |
-| 140810190002  | Rizal Herliansyah Hidayat    |
+| 140810190002  | Rizal    |
 | 140810190014  | Indra Kurniawan              |
 | 140810190026  | Rian Febriansyah             |
 
