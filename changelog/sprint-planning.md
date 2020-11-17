@@ -14,8 +14,17 @@
 
 | ID  | Title/Desc      | Asignee  |
 | --- | --------------- | -------- |
-| 1.1 | Preparing the x | Jane Doe |
-| 2.2 | Make the x      | John Doe |
+| 1.1 | Menyiapkan materi oop dari awal sampai sekarang | Jane Doe |
+| 1.2 | Membuat grid ubin utama | John Doe |
+| 1.3 | Membuat grid ubin kecil yang berjumlah n x n | John Doe |
+| 1.4 | Mengisi ubin kecil dengan angka 1 sampai (n x n)-1 | John Doe |
+| 1.5 | Mengacak urutan angka | John Doe |
+| 1.6 | Membuat listener untuk mouse | John Doe |
+| 1.7 | Membuat logic urutan dari angka | John Doe |
+| 1.8 | Membua logic ubin sudah terurut/belum | John Doe |
+| 1.9 | Membuat all button | John Doe |
+| 2.1 | Membuat design game | John Doe |
+| 2.2 | Membuat animasi ketika ubin di klik | John Doe |
 
 ## Sprint Backlog Plan (Sprint 1)
 
@@ -26,4 +35,4 @@
 
 ## Retrospective
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Sprint kemarin masih bingung dalam menentukan sprint backlog secara keseluruhan, karena belum mendapat ide lebih tentang game ini
