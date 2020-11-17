@@ -1,12 +1,12 @@
 # Sprint Planning 
-| dd/mm/yyyy
+| 17/11/2020
 
 ### Team (Insert your name)
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810190002  | Rizal Herliansyah H   |
+| 140810190014  | Indra Kurniawan    |
+| 140810190026  | Rian Febriansyah |
 
 ## Sprint Backlog Keseluruhan 
 | ID  | Title/Desc | Asignee | 
