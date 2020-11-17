@@ -2,9 +2,7 @@
 
 This repository is a final project (Java GUI) from Object-Oriented Programming Class, Teknik Informatika Universitas Padjadjaran. 
 
-[Challenge Guidelines](challenge-guideline.md)
-
-**Please create a description for this project here**
+**The 15 Puzzle, also called Game of Fifteen, is a sliding puzzle that consists of a frame of numbered square tiles in random order with one tile missing. To solve the puzzle, the players must place the tiles in order by making sliding moves that use the empty space.**
 
 ## Credits
 | NPM           | Name                         |
@@ -14,7 +12,7 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 | 140810190026  | Rian Febriansyah             |
 
 ## Change log
-- **[Sprint Planning](changelog/sprint-planning.md) - (planning date)** 
+- **[Sprint Planning](changelog/sprint-planning.md) - (16/11/2020 - 17/11/2020)** 
    -  Short changes 1
    - Short changes 2
 
