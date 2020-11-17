@@ -14,7 +14,7 @@
 
 | ID  | Title/Desc                                                    | Asignee |
 | --- | ------------------------------------------------------------- | ------- |
-| 1.1 | Menyiapkan OOP dan Java GUI dengan JFrame                     | All     |
+| 1.1 | Menyiapkan OOP dan Java GUI dengan JFrame                     | ALL     |
 | 1.2 | Membuat kerangka class FifteenPuzzle dan main class           | Rizal   |
 | 1.3 | Membuat default tiles dan grid puzzle                         | Rian    |
 | 1.4 | Membuat kondisi untuk custom tiles                            | Indra   |
@@ -31,7 +31,7 @@
 
 | ID  | Title/Desc                                          | Asignee |
 | --- | --------------------------------------------------- | ------- |
-| 1.1 | Menyiapkan OOP dan Java GUI dengan JFrame           | All     |
+| 1.1 | Menyiapkan OOP dan Java GUI dengan JFrame           | ALL     |
 | 1.2 | Membuat kerangka class FifteenPuzzle dan main class | Rizal   |
 | 1.3 | Membuat default tiles dan grid puzzle               | Rian    |
 | 1.4 | Membuat kondisi untuk custom tiles                  | Indra   |
