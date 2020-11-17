@@ -14,10 +14,10 @@
 
 | ID  | Title/Desc                                                    | Asignee  |
 | --- | ------------------------------------------------------------- | -------- |
-| 1.1 | Menyiapkan OOP dan Java GUI dengan JFrame                     | Jane Doe |
-| 1.2 | Membuat kerangka class FifteenPuzzle dan main class           | John Doe |
-| 1.3 | Membuat default tiles dan grid puzzle                         | John Doe |
-| 1.4 | Membuat kondisi untuk custom tiles                            | John Doe |
+| 1.1 | Menyiapkan OOP dan Java GUI dengan JFrame                     | ALL      |
+| 1.2 | Membuat kerangka class FifteenPuzzle dan main class           | Rizal    |
+| 1.3 | Membuat default tiles dan grid puzzle                         | Rian     |
+| 1.4 | Membuat kondisi untuk custom tiles                            | Indra    |
 | 2.1 | Mengubah 1D array ke 2D array, mengisi angka, dan blank tiles | John Doe |
 | 2.2 | Membuat listener untuk mouse                                  | John Doe |
 | 2.3 | Membuat method shuffle dan solvable                           | John Doe |
