@@ -1,4 +1,4 @@
-# Fifteeb Puzzle VDJCISN
+# Fifteen Puzzle VDJCISN
 
 This repository is a final project (Java GUI) from Object-Oriented Programming Class, Teknik Informatika Universitas Padjadjaran. 
 
@@ -18,15 +18,15 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
    -  Short changes 1
    - Short changes 2
 
-- **[Sprint 1](changelog/sprint-1.md) - (date from x until x)** 
+- **[Sprint 1](changelog/sprint-1.md) - (16/11/2020 - 22/11/2020)** 
    - Short changes 1
    - Short changes 2
 
-- **[Sprint 2](changelog/sprint-2.md) - (date from x until x)** 
+- **[Sprint 2](changelog/sprint-2.md) - (23/11/2020 - 29/11/2020)** 
    - Short changes 1
    - Short changes 2
    
-- **[Sprint 3](changelog/sprint-3.md) - (date from x until x)** 
+- **[Sprint 3](changelog/sprint-3.md) - (30/11/2020 - 06/12/2020)** 
    - Short changes 1
    - Short changes 2
 
