@@ -7,6 +7,12 @@ import javax.swing.WindowConstants;
 public class FramePuzzle implements Runnable {
     private JFrame frame;
 
+    private int size;
+
+    public FramePuzzle(int size){
+        this.size = size;
+    }
+
     @Override
     public void run() {
         frame = new JFrame("Game Fifteen Puzzle");
