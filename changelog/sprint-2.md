@@ -1,24 +1,28 @@
 # Scrum Report (Sprint 2)
 | From dd/mm/yyyy to dd/mm/yyyy
 
-## Team (Insert your name)
-| NPM           | Name        |
-| ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+### Team VDJCSIN
+
+| NPM          | Name                |
+| ------------ | ------------------- |
+| 140810190002 | Rizal Herliansyah H |
+| 140810190014 | Indra Kurniawan     |
+| 140810190026 | Rian Febriansyah    |
 
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
 | n             | n             |
 
-## Sprint 2 Backlog
+## Next Sprint Backlog (Sprint 2)
 
-| ID  | Title/Desc | Asignee | Status |
-| --- | ---------- | ------- | ------ |
-| 2.1 | Preparing the x | Jane Doe | DONE |
-| 2.2 | Make the x | John Doe | FAILED |
+| ID  | Title/Desc                                                    | Asignee |
+| --- | ------------------------------------------------------------- | ------- |
+| 2.1 | Mengubah 1D array ke 2D array, mengisi angka, dan blank tiles |         |
+| 2.2 | Membuat listener untuk mouse                                  |         |
+| 2.3 | Membuat method shuffle dan solvable                           |         |
+| 2.4 | Membuat method new game                                       |         |
+| 2.5 | Membuat button                                                |         |
 
 ## Retrospective 
 
