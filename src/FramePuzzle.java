@@ -7,10 +7,10 @@ import javax.swing.WindowConstants;
 public class FramePuzzle implements Runnable {
     private JFrame frame;
 
-    private int size;
+    private int tiles;
 
-    public FramePuzzle(int size){
-        this.size = size;
+    public FramePuzzle(int tiles){
+        this.tiles = tiles;
     }
 
     @Override
@@ -19,12 +19,12 @@ public class FramePuzzle implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         createComponents(frame.getContentPane());
-        frame.add(new FifteenPuzzle(this.size, 550, 30), BorderLayout.CENTER);
+        frame.add(new FifteenPuzzle(this.tiles, 550, 30), BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
 
         //Cek ukuran
-        System.out.println(this.size);
+        System.out.println(this.tiles);
     }
 
     private void createComponents(Container container) {
