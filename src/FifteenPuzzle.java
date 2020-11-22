@@ -12,7 +12,7 @@ public class FifteenPuzzle extends JPanel{
 
     //
     private int[] ubin;
-    private int sizeUbin
+    private int sizeUbin;
 
     private JFrame frame;
  
