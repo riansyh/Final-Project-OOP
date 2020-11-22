@@ -8,22 +8,18 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 
 public class FifteenPuzzle extends JPanel {
-    // kerangka class
-
-    //
     private int tiles;
     private int dimension;
     private int[] ubin;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
     private int sizeUbin;   
-=======
+
     private int sizeUbin;
->>>>>>> 62d4c7d0c2689a5a086d7f02b2c47ff453483267
+
     private int margin;
-=======
+
     private int sizeUbin;
->>>>>>> Stashed changes
+
 
     private JFrame frame;
 
