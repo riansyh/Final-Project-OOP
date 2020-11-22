@@ -19,9 +19,12 @@ public class FramePuzzle implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         createComponents(frame.getContentPane());
-        frame.add(new FifteenPuzzle(4, 550, 30), BorderLayout.CENTER);
+        frame.add(new FifteenPuzzle(this.size, 550, 30), BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
+
+        //Cek ukuran
+        System.out.println(this.size);
     }
 
     private void createComponents(Container container) {
