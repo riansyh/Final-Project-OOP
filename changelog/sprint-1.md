@@ -27,7 +27,7 @@
 
 ## Retrospective
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Sprint minggu kemarin terlalu sedikit konten yang dibuat atau dibahasnya, dikhawatirkan akan menumpuk di sprint selanjutnya.
 
 ## Next Sprint Backlog (Sprint 2)
 
