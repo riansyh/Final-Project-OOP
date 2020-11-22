@@ -12,12 +12,13 @@ public class FifteenPuzzle extends JPanel{
 
     //
     private int[] ubin;
-    private int sizeUbin;
+    private int sizeUbin;   
+    private int margin;
 
-    private JFrame frame;
+    private JFrame frame;   
  
     public FifteenPuzzle(){        
-        setPreferredSize(new Dimension(600, 600));
+        setPreferredSize(new Dimension(600, 600+30)); //belum buat variabel margin dan grid
         setBackground(Color.LIGHT_GRAY);
         setForeground(Color.ORANGE);
         setFont(new Font("SansSerif", Font.BOLD, 40));
