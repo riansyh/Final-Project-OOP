@@ -6,7 +6,7 @@ public class Main{
             int n = Integer.parseInt(args[0]);
             FramePuzzle frame = new FramePuzzle(n);
             SwingUtilities.invokeLater(frame);
-          } else if (Integer.parseInt(args[0]) <= 1){
+          } else if (args.length <= 1){
             System.out.println("Maaf ukurannya tidak boleh <= 1 !");
           } else {
             FramePuzzle frame = new FramePuzzle(4);
