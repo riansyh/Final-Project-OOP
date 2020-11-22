@@ -12,8 +12,12 @@ public class FifteenPuzzle extends JPanel{
 
     //
     private int[] ubin;
+<<<<<<< Updated upstream
     private int sizeUbin;   
     private int margin;
+=======
+    private int sizeUbin;
+>>>>>>> Stashed changes
 
     private JFrame frame;   
  
