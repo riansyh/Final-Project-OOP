@@ -9,7 +9,7 @@ public class FramePuzzle implements Runnable{
     
     @Override
     public void run() {
-        frame = new JFrame();
+        frame = new JFrame("Game Fifteen Puzzle");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         createComponents(frame.getContentPane());
