@@ -11,16 +11,8 @@ public class FifteenPuzzle extends JPanel {
     private int tiles;
     private int dimension;
     private int[] ubin;
-
-    private int sizeUbin;   
-
-    private int sizeUbin;
-
     private int margin;
-
     private int sizeUbin;
-
-
     private JFrame frame;
 
     public FifteenPuzzle(int tiles, int dimension, int margin) {
