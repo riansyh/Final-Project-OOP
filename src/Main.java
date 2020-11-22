@@ -5,7 +5,7 @@ public class Main{
         if(args.length != 0){
             int n = Integer.parseInt(args[0]);
             if(n <= 1){
-              System.out.println("Mikir dong gaes masa minus");
+              System.out.println("Size tidak boleh <= 1 !");
             } else {
             FramePuzzle frame = new FramePuzzle(n);
             SwingUtilities.invokeLater(frame);
