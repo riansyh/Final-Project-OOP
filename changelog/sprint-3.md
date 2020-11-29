@@ -1,5 +1,5 @@
 # Scrum Report (Sprint 3)
-| From dd/mm/yyyy to dd/mm/yyyy
+| From 30/11/2020 to 06/12/2020
 
 ### Team VDJCSIN
 
@@ -24,5 +24,5 @@
 
 ## Retrospective 
 
-Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian tugas. Lorem ipsum dolor sit amet
+Lorem ipsum dolor sit amet
 
