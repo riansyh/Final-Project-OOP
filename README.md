@@ -34,7 +34,10 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 
 ## Running The App
 
-TO;DO with steps
+- Buka command prompt pada ../src
+- ketik javac Main.java
+- ketik java Main (untuk size 4 x 4) 
+- ketik java Main n (untuk size n x n)
 
 ## Classes Used
 
