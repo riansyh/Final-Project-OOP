@@ -84,4 +84,59 @@ public class FifteenPuzzle extends JPanel {
         }
         return true;
     }
+
 }
+
+    private void drawGrid(Graphics2D g) {
+        for (int i = 0; i < ubin.length; i++) {
+
+            int r = i / size;
+            int c = i % size;
+
+            int x = margin + c * sizeUbin;
+            int y = margin + r * sizeUbin;
+
+            if (ubin[i] == 0) {
+                if (gameOver) {
+                    g.setColor(FOREGROUND_COLOR);
+                    drawCenteredString(g, "\u2713", x, y);
+                }
+
+                continue;
+            }
+
+            g.setColor(getForeground());
+            g.fillRoundRect(x, y, sizeUbin, sizeUbin, 25, 25);
+            g.setColor(Color.BLACK);
+            g.drawRoundRect(x, y, sizeUbin, sizeUbin, 25, 25);
+            g.setColor(Color.WHITE);
+
+            drawCenteredString(g, String.valueOf(ubin[i]), x, y);
+        }
+    }
+
+    private void drawStartMessage(Graphics2D g) {
+        if (gameOver) {
+            g.setFont(getFont().deriveFont(Font.BOLD, 18));
+            g.setColor(FOREGROUND_COLOR);
+            String s = "Click to start new game";
+            g.drawString(s, (getWidth() - g.getFontMetrics().stringWidth(s)) / 2, getHeight() - margin);
+        }
+    }
+
+    private void drawCenteredString(Graphics2D g, String s, int x, int y) {
+        FontMetrics fm = g.getFontMetrics();
+        int ascending = fm.getAscent();
+        int descending = fm.getDescent();
+        g.drawString(s, x + (sizeUbin - fm.stringWidth(s)) / 2,
+                y + (ascending + (sizeUbin - (ascending + descending)) / 2));
+    }
+
+  @Override
+  protected void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    Graphics2D g2D = (Graphics2D) g;
+    g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+    drawGrid(g2D);
+    drawStartMessage(g2D);
+  }
