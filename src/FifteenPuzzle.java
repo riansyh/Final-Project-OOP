@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class FifteenPuzzle extends JPanel {
+    private int size;
     private int dimension;
     private int nUbin;
     private int blankPos;
@@ -39,10 +40,9 @@ public class FifteenPuzzle extends JPanel {
 
     private void newGame() {
         do {
-            reset(); // reset in intial state
-            shuffle(); // shuffle
-        } while (!isSolvable()); // make it until grid be solvable
-
+            reset();
+            shuffle();
+        } while (!isSolvable());
         gameOver = false;
     }
 
@@ -50,14 +50,11 @@ public class FifteenPuzzle extends JPanel {
         for (int i = 0; i < ubin.length; i++) {
             ubin[i] = (i + 1) % ubin.length;
         }
-
-        // we set blank cell at the last
         blankPos = ubin.length - 1;
     }
 
     private void shuffle() {
-        int n = nbTiles;
-
+        int n = nUbin;
         while (n > 1) {
             int r = RANDOM.nextInt(n--);
             int tmp = ubin[r];
@@ -68,26 +65,23 @@ public class FifteenPuzzle extends JPanel {
 
     private boolean isSolvable() {
         int countInversions = 0;
-
-        for (int i = 0; i < nbTiles; i++) {
+        for (int i = 0; i < nUbin; i++) {
             for (int j = 0; j < i; j++) {
                 if (ubin[j] > ubin[i])
                     countInversions++;
             }
         }
-
         return countInversions % 2 == 0;
     }
 
     private boolean isSolved() {
-        if (ubin[ubin.length - 1] != 0) // if blank tile is not in the solved position ==> not solved
+        if (ubin[ubin.length - 1] != 0)
             return false;
 
-        for (int i = nbTiles - 1; i >= 0; i--) {
+        for (int i = nUbin - 1; i >= 0; i--) {
             if (ubin[i] != i + 1)
                 return false;
         }
-
         return true;
     }
 }
