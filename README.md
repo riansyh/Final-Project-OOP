@@ -57,7 +57,7 @@ UML image here
 - Urutan angka setiap grid akan diacak kecuali pada blank tiles (ubin kosong).
 - Untuk Mengecek apakah urutan tersebut dapat dipecahkan,harus memenuhi aturan berikut :
     - setiap angka yang didahului oleh angka yang lebih besar dianggap sebagai inversi, jumlah inversi dari puzzle harus genap.
-- User akan mencoba untuk menyelesaikan puzzle, mouse listener akan mengecek hal berikut : 
+- Saat user mencoba untuk menyelesaikan puzzle, mouse listener akan mengecek hal berikut : 
     - Koordinat x dan y dimana klik-an tersebut berada
     - Jika ubin telah terurut maka ubin diacak lagi
     - Jika ubin belum terurut (game belum berakhir) maka pindahkan ubin ke tempat yang kosong jika memungkinkan
