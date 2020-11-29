@@ -85,7 +85,7 @@ public class FifteenPuzzle extends JPanel {
         return true;
     }
 
-}
+
 
     private void drawGrid(Graphics2D g) {
         for (int i = 0; i < ubin.length; i++) {
@@ -140,3 +140,4 @@ public class FifteenPuzzle extends JPanel {
     drawGrid(g2D);
     drawStartMessage(g2D);
   }
+}
