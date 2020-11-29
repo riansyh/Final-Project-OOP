@@ -22,10 +22,10 @@
 | 2.2 | Membuat listener untuk mouse                                  | Rian    |
 | 2.3 | Membuat method shuffle dan solvable                           | Rizal   |
 | 2.4 | Membuat method new game                                       | Indra   |
-| 2.5 | Membuat button                                                | Rizal   |
-| 3.1 | Membuat method reset                                          |         |
-| 3.2 | Membuat animasi ketika ubin di klik                           |         |
-| 3.3 | Finishing                                                     |         |
+| 2.5 | Membuat method reset                                          | Rizal   |
+| 3.1 | Membuat button                                                | ALL     |
+| 3.2 | Membuat animasi ketika ubin di klik                           | ALL     |
+| 3.3 | Finishing                                                     | ALL     |
 
 ## Sprint Backlog Plan (Sprint 1)
 
