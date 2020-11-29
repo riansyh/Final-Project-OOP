@@ -19,7 +19,7 @@ public class FramePuzzle implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         createComponents(frame.getContentPane());
-        frame.add(new FifteenPuzzle(this.tiles, 550, 30), BorderLayout.CENTER);
+        frame.add(new FifteenPuzzle(this.tiles, 30, 550), BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
 
