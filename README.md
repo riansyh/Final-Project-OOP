@@ -52,14 +52,15 @@ UML image here
 
 ## Notable Assumption and Design App Details
 
-- Saat Aplikasi berjalan user dapat memilih ukuran tiles sehingga grid ubin akan berukuran n x n. 
-- Jika user tidak menginputkan ukuran tiles maka grid ubin secara default akan berukuran 4x4.
+- Sebelum Aplikasi berjalan user dapat menginput ukuran tiles sehingga grid ubin akan berukuran n x n. 
+- Jika user tidak menginputkan ukuran tiles maka grid ubin secara default akan berukuran 4 x 4.
 - Urutan angka setiap grid akan diacak kecuali pada blank tiles (ubin kosong).
-- Untuk Mengecek apakah urutan tersebut dapat dipecahkan,harus memenuhi aturan berikut :
-    - setiap angka yang didahului oleh angka yang lebih besar dianggap sebagai inversi, jumlah inversi dari puzzle harus genap.
+- Untuk Mengecek apakah urutan tersebut dapat dipecahkan,berikut adalah aturan yang harus terpenuhi :
+    - Setiap angka yang didahului oleh angka yang lebih besar dianggap sebagai inversi
+    - Jumlah inversi dari puzzle harus genap.
 - Saat user mencoba untuk menyelesaikan puzzle, mouse listener akan mengecek hal berikut : 
     - Koordinat x dan y dimana klik-an tersebut berada
     - Jika ubin telah terurut maka ubin diacak lagi
-    - Jika ubin belum terurut (game belum berakhir) maka pindahkan ubin ke tempat yang kosong jika memungkinkan
+    - Jika ubin belum terurut (game belum berakhir) maka pindahkan ubin ke tempat yang kosong.
     - Jika permainan terasa sulit user dapat menekan tombol reset untuk mengulang permainan.
 - Permainan akan berakhir jika user berhasil mengurutkan angka pada ubin sampai n x n - 1. 
