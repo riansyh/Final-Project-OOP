@@ -27,7 +27,7 @@ public class FifteenPuzzle extends JPanel {
     private int gridSize;
     private boolean gameOver;
 
-    public FifteenPuzzle(int size, int dimension, int margin) {
+    public FifteenPuzzle(int size, int margin, int dimension) {
         this.size = size;
         this.dimension = dimension;
         this.margin = margin;
