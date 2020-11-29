@@ -16,10 +16,11 @@
 
 ## Sprint 3 Backlog
 
-| ID  | Title/Desc | Asignee | Status |
-| --- | ---------- | ------- | ------ |
-| 3.1 | Preparing the x | Jane Doe | DONE |
-| 3.2 | Make the x | John Doe | FAILED |
+| ID  | Title/Desc                                                    | Asignee | Status |
+| --- | ------------------------------------------------------------- | ------- | ------ |
+| 3.1 | Membuat button                                                |   ALL   |        |
+| 3.2 | Membuat animasi ketika ubin di klik                           |   ALL   |        |
+| 3.3 | Finishing                                                     |   ALL   |        |
 
 ## Retrospective 
 
