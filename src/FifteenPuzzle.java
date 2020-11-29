@@ -40,7 +40,7 @@ public class FifteenPuzzle extends JPanel {
         this.sizeUbin = this.gridSize / size;
 
         setPreferredSize(new Dimension(dimension, dimension + margin));
-        setBackground(Color.WHITE);
+        setBackground(Color.DARK_GRAY);
         setForeground(Color.ORANGE);
         setFont(new Font("SansSerif", Font.BOLD, 40));
 
