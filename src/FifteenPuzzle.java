@@ -57,11 +57,11 @@ public class FifteenPuzzle extends JPanel {
                         return;
                     }
 
-                    int posisiX = clickX / sizeUbin; //c1
-                    int posisiY = clickY / sizeUbin; //r1
+                    int posisiX = clickX / sizeUbin; 
+                    int posisiY = clickY / sizeUbin; 
 
-                    int blankX = blank % size; //c2
-                    int blankY = blank / size; //r2
+                    int blankX = blank % size; 
+                    int blankY = blank / size; 
 
                     int posisiArray = posisiY * size + posisiX;
 
@@ -125,14 +125,14 @@ public class FifteenPuzzle extends JPanel {
     }
 
     private boolean isSolvable() {
-        int countInversions = 0;
+        int inversi = 0;
         for (int i = 0; i < nUbin; i++) {
             for (int j = 0; j < i; j++) {
                 if (ubin[j] > ubin[i])
-                    countInversions++;
+                    inversi++;
             }
         }
-        return countInversions % 2 == 0;
+        return inversi % 2 == 0;
     }
 
     private boolean isSolved() {
