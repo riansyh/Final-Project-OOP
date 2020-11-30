@@ -102,53 +102,7 @@ public class FifteenPuzzle extends JPanel {
         newGame();
     }
 
-    private void newGame() {
-        do {
-            reset();
-            shuffle();
-        } while (!isSolvable());
-        gameOver = false;
-    }
-
-    private void reset() {
-        for (int i = 0; i < ubin.length; i++) {
-            ubin[i] = (i + 1) % ubin.length;
-        }
-        blank = ubin.length - 1;
-    }
-
-    private void shuffle() {
-        int n = nUbin;
-        while (n > 1) {
-            int r = RANDOM.nextInt(n--);
-            int tmp = ubin[r];
-            ubin[r] = ubin[n];
-            ubin[n] = tmp;
-        }
-    }
-
-    private boolean isSolvable() {
-        int inversi = 0;
-        for (int i = 0; i < nUbin; i++) {
-            for (int j = 0; j < i; j++) {
-                if (ubin[j] > ubin[i])
-                    inversi++;
-            }
-        }
-        return inversi % 2 == 0;
-    }
-
-    private boolean isSolved() {
-        if (ubin[ubin.length - 1] != 0)
-            return false;
-
-        for (int i = nUbin - 1; i >= 0; i--) {
-            if (ubin[i] != i + 1)
-                return false;
-        }
-        return true;
-    }
-
+    //Mengubah 1D array menjadi 2D array
     private void drawGrid(Graphics2D g) {
         for (int i = 0; i < ubin.length; i++) {
 
@@ -200,5 +154,57 @@ public class FifteenPuzzle extends JPanel {
     g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     drawGrid(g2D);
     drawStartMessage(g2D);
-  }
+  }    
+
+    //method reset
+    private void reset() {
+        for (int i = 0; i < ubin.length; i++) {
+            ubin[i] = (i + 1) % ubin.length;
+        }
+        blank = ubin.length - 1;
+    }
+
+    //method shuffle untuk mengacak urutan
+    private void shuffle() {
+        int n = nUbin;
+        while (n > 1) {
+            int r = RANDOM.nextInt(n--);
+            int tmp = ubin[r];
+            ubin[r] = ubin[n];
+            ubin[n] = tmp;
+        }
+    }
+
+    //method newGame untuk memulai game
+    private void newGame() {
+        do {
+            reset();
+            shuffle();
+        } while (!isSolvable());
+        gameOver = false;
+    }
+    
+    //method untuk mengecek inversi
+    private boolean isSolvable() {
+        int inversi = 0;
+        for (int i = 0; i < nUbin; i++) {
+            for (int j = 0; j < i; j++) {
+                if (ubin[j] > ubin[i])
+                    inversi++;
+            }
+        }
+        return inversi % 2 == 0;
+    }
+
+    //method untuk mengecek sudah terselesaikan atau belum
+    private boolean isSolved() {
+        if (ubin[ubin.length - 1] != 0)
+            return false;
+
+        for (int i = nUbin - 1; i >= 0; i--) {
+            if (ubin[i] != i + 1)
+                return false;
+        }
+        return true;
+    }
 }
