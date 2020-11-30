@@ -66,13 +66,15 @@ public class FifteenPuzzle extends JPanel {
                     int posisiArray = posisiY * size + posisiX;
 
                     int arah = 0;
-
+                    
+                    //jika ubin yang diklik berada diatas dan dibawah ubin kosong
                     if(posisiX == blankX && Math.abs(posisiY - blankY) > 0){
                         if (posisiY - blankY > 0){
                             arah = size;
                         } else {
                             arah = -size;
                         }
+                    //jika ubin yang diklik berada dikiri dan kanan ubin kosong                        
                     } else if (posisiY == blankY && Math.abs(posisiX - blankX) > 0){
                         if (posisiX - blankX > 0){
                             arah = 1;
@@ -83,6 +85,7 @@ public class FifteenPuzzle extends JPanel {
 
                     if (arah != 0){
                         do{
+                            //tukar ubin blank dengan ubin yang diklik
                             int newBlank = blank + arah;
                             ubin[blank] = ubin[newBlank];
                             blank = newBlank;
