@@ -15,16 +15,15 @@ public class FramePuzzle implements Runnable {
 
     @Override
     public void run() {
+        FifteenPuzzle puzzle = new FifteenPuzzle(this.tiles, 30, 550);
+
         frame = new JFrame("Game Fifteen Puzzle");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         createComponents(frame.getContentPane());
-        frame.add(new FifteenPuzzle(this.tiles, 30, 550), BorderLayout.CENTER);
+        frame.add(puzzle, BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
-
-        //Cek ukuran
-        System.out.println(this.tiles);
     }
 
     private void createComponents(Container container) {
