@@ -2,10 +2,9 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
-import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class FramePuzzle implements Runnable {
     private JFrame frame;
@@ -19,18 +18,15 @@ public class FramePuzzle implements Runnable {
     @Override
     public void run() {
         FifteenPuzzle puzzle = new FifteenPuzzle(this.tiles, 30, 550);
-        JButton button = new JButton("Click!");
-        
+        JLabel text = new JLabel("Let's Beat The Puzzle!", SwingConstants.CENTER);
         frame = new JFrame("Game Fifteen Puzzle");
+
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        createComponents(frame.getContentPane(), puzzle);
         frame.add(puzzle, BorderLayout.CENTER);
+        frame.add(text, BorderLayout.SOUTH);
         frame.pack();
         frame.setVisible(true);
-    }
-
-    private void createComponents(Container container, FifteenPuzzle fif) {
     }
 
     public JFrame getFrame() {

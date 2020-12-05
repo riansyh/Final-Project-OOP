@@ -53,6 +53,13 @@ public class FifteenPuzzle extends JPanel {
                     int clickX = mouse.getX() - margin;  
                     int clickY = mouse.getY() - margin;
 
+                    //cek jika menekan tombol reset
+                    if (clickX + margin >= ((gridSize/2)-5) && clickY + margin >= (margin + gridSize + 15) && clickY + margin <= (margin + gridSize + 45) && clickX + margin <= (((gridSize/2)-5) + 60)){
+                        newGame();
+                        repaint();
+                        return;
+                    }                    
+                    
                     if (clickX < 0 || clickY < 0 || clickX > gridSize || clickY > gridSize ) {
                         return;
                     }
@@ -115,7 +122,8 @@ public class FifteenPuzzle extends JPanel {
             if (ubin[i] == 0) {
                 if (gameOver) {
                     g.setColor(Color.ORANGE);
-                    drawCenteredString(g, "SELAMAT!", x, y);
+                    g.setFont(getFont().deriveFont(Font.BOLD, 18));
+                    drawCenteredString(g, "Done!", x, y);
                 }
                 continue;
             }
@@ -132,7 +140,7 @@ public class FifteenPuzzle extends JPanel {
 		g.setColor(Color.ORANGE);
         g.fillRoundRect((gridSize/2)-5, margin+gridSize+15, 70, 30, 30, 30);
             
-        g.setColor(Color.WHITE);
+        g.setColor(Color.DARK_GRAY);
         g.setFont(getFont().deriveFont(Font.BOLD, 14));
         g.drawString("Reset", gridSize/2 + 10, margin + gridSize + 35);
         
@@ -140,10 +148,14 @@ public class FifteenPuzzle extends JPanel {
 
     private void drawStartMessage(Graphics2D g) {
         if (gameOver) {
-            g.setFont(getFont().deriveFont(Font.BOLD, 18));
+            String s = "Click to start new game";       
+
+            g.setColor(Color.DARK_GRAY);
+            g.fillRoundRect((gridSize/2)-5, margin+gridSize+15, 140, 40, 30, 30);
+                
             g.setColor(Color.ORANGE);
-            String s = "Click to start new game";
-            g.drawString(s, (getWidth() - g.getFontMetrics().stringWidth(s)) / 2, getHeight() - margin);
+            g.setFont(getFont().deriveFont(Font.BOLD, 18));
+            g.drawString(s, (getWidth() - g.getFontMetrics().stringWidth(s)) / 2, margin + gridSize + 35);
         }
     }
 
