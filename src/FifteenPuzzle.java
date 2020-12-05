@@ -128,6 +128,14 @@ public class FifteenPuzzle extends JPanel {
 
             drawCenteredString(g, String.valueOf(ubin[i]), x, y);
         }
+        // Reset Button
+		g.setColor(Color.ORANGE);
+        g.fillRoundRect((gridSize/2)-5, margin+gridSize+15, 70, 30, 30, 30);
+            
+        g.setColor(Color.WHITE);
+        g.setFont(getFont().deriveFont(Font.BOLD, 14));
+        g.drawString("Reset", gridSize/2 + 10, margin + gridSize + 35);
+        
     }
 
     private void drawStartMessage(Graphics2D g) {
