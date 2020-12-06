@@ -1,3 +1,11 @@
+/*
+| NPM          | Name                |
+| ------------ | ------------------- |
+| 140810190002 | Rizal Herliansyah H |
+| 140810190014 | Indra Kurniawan     |
+| 140810190026 | Rian Febriansyah    |
+*/
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -18,7 +26,7 @@ public class FramePuzzle implements Runnable {
     @Override
     public void run() {
         FifteenPuzzle puzzle = new FifteenPuzzle(this.tiles, 30, 550);
-        JLabel text = new JLabel("Let's Beat The Puzzle!", SwingConstants.CENTER);
+        JLabel text = new JLabel("Size Puzzle: " + this.tiles + " x " + this.tiles , SwingConstants.CENTER);
         frame = new JFrame("Game Fifteen Puzzle");
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
