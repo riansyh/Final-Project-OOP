@@ -24,7 +24,7 @@ import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FifteenPuzzle extends JPanel implements ActionListener{
+public class FifteenPuzzle extends JPanel{
     private int size;
     private int dimension;
     private int nUbin;
