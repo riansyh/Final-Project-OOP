@@ -28,6 +28,7 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
   - Membuat kondisi untuk custom tiles
 
 - **[Sprint 2](changelog/sprint-2.md) - (23/11/2020 - 29/11/2020)**
+
   - Mengubah 1D array ke 2D array, mengisi angka, dan blank tiles
   - Membuat listener untuk mouse
   - Membuat method shuffle dan solvable
@@ -46,21 +47,31 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 
 ## Classes Used
 
-TO;DO
+1. **Main** : Main.java
+
+   - Main program di mana FifteenPuzzle dijalankan dalam UI.
+
+2. **FramePuzzle** : FramePuzzle.java
+
+   - Objek yang mengimplementasi class `Runanble` dan sebagai frame dari keseluruhan UI FifteenPuzzle.
+
+3. **FifteenPuzzle** : FifteenPuzzle.java
+   - Objek yang mengimplementasi `JPanel` sebagai logic dan class utama di dalam game ini.
 
 UML image here
 
 ## Notable Assumption and Design App Details
 
-- Sebelum Aplikasi berjalan user dapat menginput ukuran tiles sehingga grid ubin akan berukuran n x n. 
+- Sebelum Aplikasi berjalan user dapat menginput ukuran tiles sehingga grid ubin akan berukuran n x n.
 - Jika user tidak menginputkan ukuran tiles maka grid ubin secara default akan berukuran 4 x 4.
 - Urutan angka setiap grid akan diacak kecuali pada blank tiles (ubin kosong).
 - Untuk Mengecek apakah urutan tersebut dapat dipecahkan,berikut adalah aturan yang harus terpenuhi :
-    - Setiap angka yang didahului oleh angka yang lebih besar dianggap sebagai inversi
-    - Jumlah inversi dari puzzle harus genap.
-- Saat user mencoba untuk menyelesaikan puzzle, mouse listener akan mengecek hal berikut : 
-    - Koordinat x dan y dimana klik-an tersebut berada
-    - Jika ubin telah terurut maka ubin diacak lagi
-    - Jika ubin belum terurut (game belum berakhir) maka pindahkan ubin ke tempat yang kosong.
-    - Jika permainan terasa sulit user dapat menekan tombol reset untuk mengulang permainan.
-- Permainan akan berakhir jika user berhasil mengurutkan angka pada ubin sampai n x n - 1. 
+  - Setiap angka yang didahului oleh angka yang lebih besar dianggap sebagai inversi
+  - Jumlah inversi dari puzzle harus genap.
+- Saat user mencoba untuk menyelesaikan puzzle, mouse listener akan mengecek hal berikut :
+  - Koordinat x dan y dimana klik-an tersebut berada
+  - Jika ubin telah terurut maka ubin diacak lagi
+  - Jika ubin belum terurut (game belum berakhir) maka pindahkan ubin ke tempat yang kosong.
+  - Jika permainan terasa sulit user dapat menekan tombol reset untuk mengulang permainan.
+- Permainan akan berakhir jika user berhasil mengurutkan angka pada ubin sampai n x n - 1.
+- Dalam permainan terdapat tombol reset untuk mengulang kembali susunan puzzle.
