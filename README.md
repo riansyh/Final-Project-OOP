@@ -56,9 +56,10 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
    - Objek yang mengimplementasi class `Runanble` dan sebagai frame dari keseluruhan UI FifteenPuzzle.
 
 3. **FifteenPuzzle** : FifteenPuzzle.java
+
    - Objek yang mengimplementasi `JPanel` sebagai logic dan class utama di dalam game ini.
 
-UML image here
+   ![UML](/images/UML_15Puzzle.png)
 
 ## Notable Assumption and Design App Details
 
