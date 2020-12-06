@@ -14,16 +14,18 @@
 
 | Planned (n) | Completed (n) |
 | ----------- | ------------- |
-| 3           | n             |
+| 3           | 2             |
 
 ## Sprint 3 Backlog
 
 | ID  | Title/Desc                          | Asignee | Status |
 | --- | ----------------------------------- | ------- | ------ |
-| 3.1 | Membuat button                      | Rizal   |        |
-| 3.2 | Membuat animasi ketika ubin di klik | Rian    |        |
-| 3.3 | Finishing                           | Indra   |        |
+| 3.1 | Membuat button                      | Rizal   | DONE   |
+| 3.2 | Membuat animasi ketika ubin di klik | Rian    | FAILED |
+| 3.3 | Finishing                           | Indra   | DONE   |
 
 ## Retrospective
 
-Lorem ipsum dolor sit amet
+Terdapat kesulitan saat membuat animasi ketika ubin diklik, tetapi sebagai gantinya
+kami menambahkan fitur score di dalam puzzle ini, sehingga user bisa mengetahui
+berapa score yang mereka miliki saat menyelesaikan puzzle.

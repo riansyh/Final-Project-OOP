@@ -74,5 +74,5 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
   - Jika ubin telah terurut maka ubin diacak lagi
   - Jika ubin belum terurut (game belum berakhir) maka pindahkan ubin ke tempat yang kosong.
   - Jika permainan terasa sulit user dapat menekan tombol reset untuk mengulang permainan.
-- Permainan akan berakhir jika user berhasil mengurutkan angka pada ubin sampai n x n - 1.
+- Permainan akan berakhir jika user berhasil mengurutkan angka pada ubin sampai n x n - 1 dan akan tampil score yang diperoleh.
 - Dalam permainan terdapat tombol reset untuk mengulang kembali susunan puzzle.
