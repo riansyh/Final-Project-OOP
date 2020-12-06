@@ -16,11 +16,15 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
 import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.*;
+import javax.*;
+
 import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,7 +41,8 @@ public class FifteenPuzzle extends JPanel{
     private JFrame frame;
     private int gridSize;
     private boolean gameOver;
-    public int jumlahClick;
+    public int score = 1000;
+    public int jumlahClick = 0;
     private JLabel message;
 
     public FifteenPuzzle(int size, int margin, int dimension) {
@@ -57,15 +62,13 @@ public class FifteenPuzzle extends JPanel{
         setForeground(Color.ORANGE);
         setFont(new Font("SansSerif", Font.BOLD, 40));
 
-
         addMouseListener(new MouseAdapter(){
-            int jumlahKlik = 0;
             @Override
             public void mousePressed(MouseEvent mouse) {
                 if(gameOver){
                     newGame();
                 } else {
-                    System.out.println(jumlahKlik);
+                    System.out.println(jumlahClick);
                     int clickX = mouse.getX() - margin;  
                     int clickY = mouse.getY() - margin;
 
@@ -73,6 +76,7 @@ public class FifteenPuzzle extends JPanel{
                     if (clickX + margin >= ((gridSize/2)-5) && clickY + margin >= (margin + gridSize + 15) && clickY + margin <= (margin + gridSize + 45) && clickX + margin <= (((gridSize/2)-5) + 60)){
                         newGame();
                         repaint();
+                        jumlahClick = 0;
                         return;
                     }                    
                     
@@ -113,18 +117,16 @@ public class FifteenPuzzle extends JPanel{
                             int newBlank = blank + arah;
                             ubin[blank] = ubin[newBlank];
                             blank = newBlank;
-                            jumlahKlik++;
+                            jumlahClick += 1;
                         } while (blank != posisiArray);
-
                         ubin[blank] = 0;
                     }
                     gameOver = isSolved();
                 }
                 repaint();
-                jumlahClick = jumlahKlik;
                 System.out.println("Jumlah click " + jumlahClick);
             }
-        });            
+        });    
         newGame();
     }
 
@@ -138,11 +140,19 @@ public class FifteenPuzzle extends JPanel{
             int x = this.margin + c * this.sizeUbin;
             int y = this.margin + r * this.sizeUbin;
 
+            System.out.println("nilai x = "  + x);
+            System.out.println("nilai y = "  + y);
+
             if (ubin[i] == 0) {
                 if (gameOver) {
+                    this.score = (this.score * this.size) - (this.jumlahClick * 20);
                     g.setColor(Color.ORANGE);
-                    g.setFont(getFont().deriveFont(Font.BOLD, 18));
-                    drawCenteredString(g, "Done!", x, y);
+                    g.setFont(getFont().deriveFont(Font.BOLD, 16));
+                    drawCenteredString(g, "Solve! ", x, y - 15);
+                    drawCenteredString(g, "Solve! " + "Jumlah Step = " + this.jumlahClick, x, y + 5);
+                    drawCenteredString(g, "Score " + this.score, x, y + 25);
+                    jumlahClick = 0;
+                    this.score = 1000;
                 }
                 continue;
             }
@@ -153,6 +163,9 @@ public class FifteenPuzzle extends JPanel{
             g.drawRect(x, y, sizeUbin, sizeUbin);
             g.setColor(Color.WHITE);
 
+            System.out.println("nilai x bawah = "  + x);
+            System.out.println("nilai y bawah = "  + y);
+
             drawCenteredString(g, String.valueOf(ubin[i]), x, y);
         }
         // Reset Button
@@ -161,17 +174,20 @@ public class FifteenPuzzle extends JPanel{
             
         g.setColor(Color.DARK_GRAY);
         g.setFont(getFont().deriveFont(Font.BOLD, 14));
-        g.drawString("Reset", gridSize/2 + 10, margin + gridSize + 35);
-        
+        g.drawString("Reset", gridSize/2 + 10, margin + gridSize + 35);        
 
-        g.setColor(Color.WHITE);
+        if(!gameOver){
+            g.setColor(Color.WHITE);
         g.setFont(getFont().deriveFont(Font.BOLD, 14));
-        g.drawString("Jumlah Step : " + this.jumlahClick, gridSize/2 + 3, margin + gridSize + 55);
+        g.drawString("Jumlah Step : " + this.jumlahClick, gridSize/2 + 75, margin + gridSize + 35);
+        }
     }
 
     private void drawStartMessage(Graphics2D g) {
         if (gameOver) {
-            String s = "Click to start new game";       
+            String s = "Click to start new game";
+            
+            jumlahClick = 0;
 
             g.setColor(Color.DARK_GRAY);
             g.fillRoundRect((gridSize/2)-5, margin+gridSize+15, 140, 40, 30, 30);
@@ -221,6 +237,7 @@ public class FifteenPuzzle extends JPanel{
     //method newGame untuk memulai game
     private void newGame() {
         do {
+            jumlahClick = 0;
             reset();
             shuffle();
         } while (!isSolvable());
