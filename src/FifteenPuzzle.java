@@ -21,8 +21,10 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class FifteenPuzzle extends JPanel {
+public class FifteenPuzzle extends JPanel implements ActionListener{
     private int size;
     private int dimension;
     private int nUbin;
@@ -34,6 +36,7 @@ public class FifteenPuzzle extends JPanel {
     private JFrame frame;
     private int gridSize;
     private boolean gameOver;
+    public int jumlahClick;
 
     public FifteenPuzzle(int size, int margin, int dimension) {
         this.size = size;
@@ -52,12 +55,15 @@ public class FifteenPuzzle extends JPanel {
         setForeground(Color.ORANGE);
         setFont(new Font("SansSerif", Font.BOLD, 40));
 
+
         addMouseListener(new MouseAdapter(){
+            int jumlahKlik = 0;
             @Override
             public void mousePressed(MouseEvent mouse) {
                 if(gameOver){
                     newGame();
                 } else {
+                    System.out.println(jumlahKlik);
                     int clickX = mouse.getX() - margin;  
                     int clickY = mouse.getY() - margin;
 
@@ -89,6 +95,7 @@ public class FifteenPuzzle extends JPanel {
                         } else {
                             arah = -size;
                         }
+
                     //jika ubin yang diklik berada dikiri dan kanan ubin kosong                        
                     } else if (posisiY == blankY && Math.abs(posisiX - blankX) > 0){
                         if (posisiX - blankX > 0){
@@ -104,14 +111,16 @@ public class FifteenPuzzle extends JPanel {
                             int newBlank = blank + arah;
                             ubin[blank] = ubin[newBlank];
                             blank = newBlank;
+                            jumlahKlik++;
                         } while (blank != posisiArray);
 
                         ubin[blank] = 0;
                     }
-
                     gameOver = isSolved();
                 }
                 repaint();
+                jumlahClick = jumlahKlik;
+                System.out.println("Jumlah click " + jumlahClick);
             }
         });            
         newGame();

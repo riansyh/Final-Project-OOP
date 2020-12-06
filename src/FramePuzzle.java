@@ -31,12 +31,23 @@ public class FramePuzzle implements Runnable {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
+<<<<<<< Updated upstream
         frame.add(puzzle, BorderLayout.CENTER);
         frame.add(text, BorderLayout.SOUTH);
+=======
+        createComponents(frame.getContentPane(), puzzle);
+>>>>>>> Stashed changes
         frame.pack();
         frame.setVisible(true);
     }
 
+<<<<<<< Updated upstream
+=======
+    private void createComponents(Container container, FifteenPuzzle puzzle) {
+        container.add(puzzle, BorderLayout.CENTER);
+    }
+
+>>>>>>> Stashed changes
     public JFrame getFrame() {
         return frame;
     }
