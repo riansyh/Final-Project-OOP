@@ -19,12 +19,13 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FifteenPuzzle extends JPanel implements ActionListener{
+public class FifteenPuzzle extends JPanel{
     private int size;
     private int dimension;
     private int nUbin;
@@ -37,6 +38,7 @@ public class FifteenPuzzle extends JPanel implements ActionListener{
     private int gridSize;
     private boolean gameOver;
     public int jumlahClick;
+    private JLabel message;
 
     public FifteenPuzzle(int size, int margin, int dimension) {
         this.size = size;
@@ -161,6 +163,10 @@ public class FifteenPuzzle extends JPanel implements ActionListener{
         g.setFont(getFont().deriveFont(Font.BOLD, 14));
         g.drawString("Reset", gridSize/2 + 10, margin + gridSize + 35);
         
+
+        g.setColor(Color.WHITE);
+        g.setFont(getFont().deriveFont(Font.BOLD, 14));
+        g.drawString("Jumlah Step : " + this.jumlahClick, gridSize/2 + 3, margin + gridSize + 55);
     }
 
     private void drawStartMessage(Graphics2D g) {
