@@ -29,7 +29,7 @@ public class FramePuzzle implements Runnable {
         frame = new JFrame("Game Fifteen Puzzle");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.add(puzzle, BorderLayout.CENTER);
+
         createComponents(frame.getContentPane(), puzzle);
         frame.pack();
         frame.setVisible(true);
