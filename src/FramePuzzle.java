@@ -6,15 +6,17 @@
 | 140810190026 | Rian Febriansyah    |
 */
 
+import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.*;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-public class FramePuzzle implements Runnable {
+public class FramePuzzle extends JPanel implements Runnable {
     private JFrame frame;
 
     private int tiles;
@@ -25,7 +27,7 @@ public class FramePuzzle implements Runnable {
 
     @Override
     public void run() {
-        FifteenPuzzle puzzle = new FifteenPuzzle(this.tiles, 30, 550);
+        FifteenPuzzle puzzle = new FifteenPuzzle(this.tiles, 30, 750);
         frame = new JFrame("Game Fifteen Puzzle");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);

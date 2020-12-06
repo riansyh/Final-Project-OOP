@@ -22,8 +22,7 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.*;
-import javax.*;
+import javax.swing.Timer;
 
 import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
@@ -36,6 +35,7 @@ public class FifteenPuzzle extends JPanel{
     private int blank;
     private static final Random RANDOM = new Random();
     private int[] ubin;
+    private int[] hScore;
     private int margin;
     private int sizeUbin;
     private JFrame frame;
@@ -43,7 +43,9 @@ public class FifteenPuzzle extends JPanel{
     private boolean gameOver;
     public int score = 1000;
     public int jumlahClick = 0;
-    private JLabel message;
+    public int xCoor;
+    public int yCoor;
+    public int solve;
 
     public FifteenPuzzle(int size, int margin, int dimension) {
         this.size = size;
@@ -57,63 +59,65 @@ public class FifteenPuzzle extends JPanel{
         this.gridSize = (dimension - (2 * margin));
         this.sizeUbin = this.gridSize / size;
 
-        setPreferredSize(new Dimension(dimension, dimension + margin));
+        setPreferredSize(new Dimension(dimension + 200, dimension + margin));
         setBackground(Color.DARK_GRAY);
         setForeground(Color.ORANGE);
         setFont(new Font("SansSerif", Font.BOLD, 40));
 
-        addMouseListener(new MouseAdapter(){
+        addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent mouse) {
-                if(gameOver){
+                if (gameOver) {
                     newGame();
                 } else {
                     System.out.println(jumlahClick);
-                    int clickX = mouse.getX() - margin;  
+                    int clickX = mouse.getX() - margin;
                     int clickY = mouse.getY() - margin;
 
-                    //cek jika menekan tombol reset
-                    if (clickX + margin >= ((gridSize/2)-5) && clickY + margin >= (margin + gridSize + 15) && clickY + margin <= (margin + gridSize + 45) && clickX + margin <= (((gridSize/2)-5) + 60)){
+                    // cek jika menekan tombol reset
+                    if (clickX + margin >= ((gridSize / 2) - 5) && clickY + margin >= (margin + gridSize + 15)
+                            && clickY + margin <= (margin + gridSize + 45)
+                            && clickX + margin <= (((gridSize / 2) - 5) + 60)) {
                         newGame();
                         repaint();
                         jumlahClick = 0;
                         return;
-                    }                    
-                    
-                    if (clickX < 0 || clickY < 0 || clickX > gridSize || clickY > gridSize ) {
+                    }
+
+                    if (clickX < 0 || clickY < 0 || clickX > gridSize || clickY > gridSize) {
                         return;
                     }
 
-                    int posisiX = clickX / sizeUbin; 
-                    int posisiY = clickY / sizeUbin; 
+                    int posisiX = clickX / sizeUbin;
+                    int posisiY = clickY / sizeUbin;
 
-                    int blankX = blank % size; 
-                    int blankY = blank / size; 
+                    int blankX = blank % size;
+                    int blankY = blank / size;
 
                     int posisiArray = posisiY * size + posisiX;
 
                     int arah = 0;
-                    
-                    //jika ubin yang diklik berada diatas dan dibawah ubin kosong
-                    if(posisiX == blankX && Math.abs(posisiY - blankY) > 0){
-                        if (posisiY - blankY > 0){
+
+                    // jika ubin yang diklik berada diatas dan dibawah ubin kosong
+                    if (posisiX == blankX && Math.abs(posisiY - blankY) > 0) {
+                        if (posisiY - blankY > 0) {
                             arah = size;
                         } else {
                             arah = -size;
                         }
 
-                    //jika ubin yang diklik berada dikiri dan kanan ubin kosong                        
-                    } else if (posisiY == blankY && Math.abs(posisiX - blankX) > 0){
-                        if (posisiX - blankX > 0){
+                        // jika ubin yang diklik berada dikiri dan kanan ubin kosong
+                    } else if (posisiY == blankY && Math.abs(posisiX - blankX) > 0) {
+                        if (posisiX - blankX > 0) {
                             arah = 1;
                         } else {
                             arah = -1;
-                        }                        
+                        }
                     }
 
-                    if (arah != 0){
-                        do{
-                            //tukar ubin blank dengan ubin yang diklik
+                    if (arah != 0) {
+                        do {
+                            // tukar ubin blank dengan ubin yang diklik
                             int newBlank = blank + arah;
                             ubin[blank] = ubin[newBlank];
                             blank = newBlank;
@@ -126,31 +130,31 @@ public class FifteenPuzzle extends JPanel{
                 repaint();
                 System.out.println("Jumlah click " + jumlahClick);
             }
-        });    
+        });
         newGame();
     }
 
-    //Mengubah 1D array menjadi 2D array
+    // Mengubah 1D array menjadi 2D array
     private void drawGrid(Graphics2D g) {
         for (int i = 0; i < ubin.length; i++) {
 
             int r = i / this.size;
             int c = i % this.size;
 
-            int x = this.margin + c * this.sizeUbin;
-            int y = this.margin + r * this.sizeUbin;
-
-            System.out.println("nilai x = "  + x);
-            System.out.println("nilai y = "  + y);
+            this.xCoor = this.margin + c * this.sizeUbin;
+            this.yCoor = this.margin + r * this.sizeUbin;
 
             if (ubin[i] == 0) {
                 if (gameOver) {
-                    this.score = (this.score * this.size) - (this.jumlahClick * 20);
+                    this.score = (this.score * this.size) - (this.jumlahClick * 10);
+                    this.ubin = new int(this.score);
                     g.setColor(Color.ORANGE);
                     g.setFont(getFont().deriveFont(Font.BOLD, 16));
-                    drawCenteredString(g, "Solve! ", x, y - 15);
-                    drawCenteredString(g, "Solve! " + "Jumlah Step = " + this.jumlahClick, x, y + 5);
-                    drawCenteredString(g, "Score " + this.score, x, y + 25);
+                    drawCenteredString(g, "Solve! ", this.xCoor, this.yCoor - 15);
+                    drawCenteredString(g, "Jumlah Step = " + this.jumlahClick, this.xCoor, this.yCoor + 5);
+                    drawCenteredString(g, "Score " + this.score, this.xCoor, this.yCoor + 25);
+                    solve += 1;
+                    System.out.println("solve : " + this.solve);
                     jumlahClick = 0;
                     this.score = 1000;
                 }
@@ -158,40 +162,42 @@ public class FifteenPuzzle extends JPanel{
             }
 
             g.setColor(getForeground());
-            g.fillRect(x, y, sizeUbin, sizeUbin);
+            g.fillRoundRect(this.xCoor, this.yCoor, sizeUbin, sizeUbin,20,20);
             g.setColor(Color.BLACK);
-            g.drawRect(x, y, sizeUbin, sizeUbin);
+            g.drawRoundRect(this.xCoor, this.yCoor, sizeUbin, sizeUbin,20,20);
             g.setColor(Color.WHITE);
 
-            System.out.println("nilai x bawah = "  + x);
-            System.out.println("nilai y bawah = "  + y);
-
-            drawCenteredString(g, String.valueOf(ubin[i]), x, y);
+            drawCenteredString(g, String.valueOf(ubin[i]), this.xCoor, this.yCoor);
         }
         // Reset Button
-		g.setColor(Color.ORANGE);
-        g.fillRoundRect((gridSize/2)-5, margin+gridSize+15, 70, 30, 30, 30);
-            
+        g.setColor(Color.ORANGE);
+        g.fillRoundRect((gridSize / 2) - 5, margin + gridSize + 15, 70, 30, 30, 30);
+
         g.setColor(Color.DARK_GRAY);
         g.setFont(getFont().deriveFont(Font.BOLD, 14));
-        g.drawString("Reset", gridSize/2 + 10, margin + gridSize + 35);        
+        g.drawString("Reset", gridSize / 2 + 10, margin + gridSize + 35);
+        
+        g.setColor(Color.ORANGE);
+        g.drawString(" -- Kelompok VDJCISN -- ", 745, 50);
+        g.drawString("High Score", 790, 80);
+        g.drawLine(740, this.dimension + 50, 740, 0);
 
-        if(!gameOver){
+        if (!gameOver) {
             g.setColor(Color.WHITE);
-        g.setFont(getFont().deriveFont(Font.BOLD, 14));
-        g.drawString("Jumlah Step : " + this.jumlahClick, gridSize/2 + 75, margin + gridSize + 35);
+            g.setFont(getFont().deriveFont(Font.BOLD, 14));
+            g.drawString("Jumlah Step : " + this.jumlahClick, gridSize / 2 + 75, margin + gridSize + 35);
         }
     }
 
     private void drawStartMessage(Graphics2D g) {
         if (gameOver) {
             String s = "Click to start new game";
-            
+
             jumlahClick = 0;
 
             g.setColor(Color.DARK_GRAY);
-            g.fillRoundRect((gridSize/2)-5, margin+gridSize+15, 140, 40, 30, 30);
-                
+            g.fillRoundRect((gridSize / 2) - 5, margin + gridSize + 15, 140, 40, 30, 30);
+
             g.setColor(Color.ORANGE);
             g.setFont(getFont().deriveFont(Font.BOLD, 18));
             g.drawString(s, (getWidth() - g.getFontMetrics().stringWidth(s)) / 2, margin + gridSize + 35);
@@ -213,9 +219,9 @@ public class FifteenPuzzle extends JPanel{
         g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         drawGrid(g2D);
         drawStartMessage(g2D);
-    }    
+    }
 
-    //method reset
+    // method reset
     private void reset() {
         for (int i = 0; i < ubin.length; i++) {
             ubin[i] = (i + 1) % ubin.length;
@@ -223,7 +229,7 @@ public class FifteenPuzzle extends JPanel{
         blank = ubin.length - 1;
     }
 
-    //method shuffle untuk mengacak urutan
+    // method shuffle untuk mengacak urutan
     private void shuffle() {
         int n = nUbin;
         while (n > 1) {
@@ -234,7 +240,7 @@ public class FifteenPuzzle extends JPanel{
         }
     }
 
-    //method newGame untuk memulai game
+    // method newGame untuk memulai game
     private void newGame() {
         do {
             jumlahClick = 0;
@@ -243,8 +249,8 @@ public class FifteenPuzzle extends JPanel{
         } while (!isSolvable());
         gameOver = false;
     }
-    
-    //method untuk mengecek inversi
+
+    // method untuk mengecek inversi
     private boolean isSolvable() {
         int inversi = 0;
         for (int i = 0; i < nUbin; i++) {
@@ -256,7 +262,7 @@ public class FifteenPuzzle extends JPanel{
         return inversi % 2 == 0;
     }
 
-    //method untuk mengecek sudah terselesaikan atau belum
+    // method untuk mengecek sudah terselesaikan atau belum
     private boolean isSolved() {
         if (ubin[ubin.length - 1] != 0)
             return false;
