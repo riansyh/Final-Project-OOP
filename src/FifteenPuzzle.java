@@ -206,14 +206,14 @@ public class FifteenPuzzle extends JPanel{
                 y + (ascending + (sizeUbin - (ascending + descending)) / 2));
     }
 
-  @Override
-  protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
-    Graphics2D g2D = (Graphics2D) g;
-    g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-    drawGrid(g2D);
-    drawStartMessage(g2D);
-  }    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        drawGrid(g2D);
+        drawStartMessage(g2D);
+    }    
 
     //method reset
     private void reset() {
