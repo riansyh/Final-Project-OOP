@@ -18,6 +18,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.ListIterator;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,14 +32,13 @@ import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FifteenPuzzle extends JPanel{
+public class FifteenPuzzle extends JPanel {
     private int size;
     private int dimension;
     private int nUbin;
     private int blank;
     private static final Random RANDOM = new Random();
     private int[] ubin;
-    private int[] hScore;
     private int margin;
     private int sizeUbin;
     private JFrame frame;
@@ -46,6 +49,8 @@ public class FifteenPuzzle extends JPanel{
     public int xCoor;
     public int yCoor;
     public int solve;
+
+    ArrayList arr = new ArrayList(2);
 
     public FifteenPuzzle(int size, int margin, int dimension) {
         this.size = size;
@@ -67,10 +72,9 @@ public class FifteenPuzzle extends JPanel{
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent mouse) {
-                if (gameOver) {
+                if (gameOver) { 
                     newGame();
                 } else {
-                    System.out.println(jumlahClick);
                     int clickX = mouse.getX() - margin;
                     int clickY = mouse.getY() - margin;
 
@@ -128,7 +132,7 @@ public class FifteenPuzzle extends JPanel{
                     gameOver = isSolved();
                 }
                 repaint();
-                System.out.println("Jumlah click " + jumlahClick);
+                System.out.println("Jumlah Step " + jumlahClick);
             }
         });
         newGame();
@@ -147,7 +151,7 @@ public class FifteenPuzzle extends JPanel{
             if (ubin[i] == 0) {
                 if (gameOver) {
                     this.score = (this.score * this.size) - (this.jumlahClick * 10);
-                    this.ubin = new int(this.score);
+                    arr.add(this.score);
                     g.setColor(Color.ORANGE);
                     g.setFont(getFont().deriveFont(Font.BOLD, 16));
                     drawCenteredString(g, "Solve! ", this.xCoor, this.yCoor - 15);
@@ -162,9 +166,9 @@ public class FifteenPuzzle extends JPanel{
             }
 
             g.setColor(getForeground());
-            g.fillRoundRect(this.xCoor, this.yCoor, sizeUbin, sizeUbin,20,20);
+            g.fillRoundRect(this.xCoor, this.yCoor, sizeUbin, sizeUbin, 20, 20);
             g.setColor(Color.BLACK);
-            g.drawRoundRect(this.xCoor, this.yCoor, sizeUbin, sizeUbin,20,20);
+            g.drawRoundRect(this.xCoor, this.yCoor, sizeUbin, sizeUbin, 20, 20);
             g.setColor(Color.WHITE);
 
             drawCenteredString(g, String.valueOf(ubin[i]), this.xCoor, this.yCoor);
@@ -176,10 +180,22 @@ public class FifteenPuzzle extends JPanel{
         g.setColor(Color.DARK_GRAY);
         g.setFont(getFont().deriveFont(Font.BOLD, 14));
         g.drawString("Reset", gridSize / 2 + 10, margin + gridSize + 35);
-        
+
         g.setColor(Color.ORANGE);
         g.drawString(" -- Kelompok VDJCISN -- ", 745, 50);
         g.drawString("High Score", 790, 80);
+
+        Collections.sort(arr, Collections.reverseOrder());
+
+        int index = 100;
+        int n = 1;
+        ListIterator li = arr.listIterator();
+        while (li.hasNext()) {
+            g.drawString(n + ". " + li.next().toString(), 803, index);
+            index += 20;
+            n++;
+        }
+
         g.drawLine(740, this.dimension + 50, 740, 0);
 
         if (!gameOver) {
