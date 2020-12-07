@@ -43,7 +43,7 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 
 - Buka command prompt pada .../Final-Project-OOP/src
 - ketik javac Main.java
-- Lalu ketik java Main (untuk size 4 x 4) atau ketik java Main n (untuk size n x n)
+- Lalu ketik `java Main` (untuk size 4 x 4) atau ketik `java Main n` (untuk size n x n)
 
 ## Classes Used
 
